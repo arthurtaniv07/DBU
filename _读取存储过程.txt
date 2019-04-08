@@ -1,0 +1,15 @@
+---所有存储过程
+select * from dbo.sysobjects where OBJECTPROPERTY(id, N'IsProcedure') = 1 order by name
+
+
+--参数
+select * from information_schema.PARAMETERS
+
+select c.name as ColumnName, c.colorder as ColumnOrder, typ.name as  DataTypeName, c.Length, c.isnullable
+from syscolumns c
+inner join dbo.systypes typ on typ.xtype = c.xtype
+where ID in (
+	SELECT id 
+	FROM sysobjects as a  
+	WHERE OBJECTPROPERTY(id, N'IsProcedure') = 1 and id = object_id(N'SP_TestTVP_I')
+)

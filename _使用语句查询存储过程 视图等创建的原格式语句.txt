@@ -1,0 +1,37 @@
+
+declare @name nvarchar(max),@object_id int,  
+                @sourcecode varchar(max),  
+                @line varchar(max),  
+                @end int,  
+                @rn varchar(2),  
+                @tab varchar(1)  
+                  
+declare @source table(  
+    source varchar(max)  
+) 
+
+set @name = '【name】'----这里是需要查询的对象的名称【视图、存储过程、函数、触发器。。。】
+
+set @rn = char(13)+char(10)  
+set @tab = char(9)  
+  
+  
+select @sourcecode = definition from sys.sql_modules where object_id=object_id(@name)  
+  
+while(charindex(@rn,@sourcecode)!=0)  
+begin  
+    set @end=charindex(@rn,@sourcecode)  
+    set @line = replace(substring(@sourcecode,1,@end-1),@tab,@tab+@tab)  
+
+    --if(charindex('create',@line)<>0 and (charindex('proc',@line)<>0 or charindex('view',@line)<>0 or charindex('function',@line)<>0 or charindex('trigger',@line)<>0))  
+    --begin  
+    --    set @line = replace(@line,'create','alter')  
+    --end  
+    insert into @source(source) values(@line)  
+    set @end = @end + 2  
+    set @sourcecode = substring(@sourcecode,@end,len(@sourcecode))  
+end  
+
+insert into @source(source) values(@sourcecode)  
+  
+select * from @source 

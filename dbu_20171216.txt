@@ -1,0 +1,68 @@
+select 
+	obj.xtype objtype  -- 对象类型  U:表信息  V：视图  PK：主键   D：默认约束  P：存储过程  TR：触发器  F：外键
+	,obj.name  objname  -- 对象的描述
+	,obj2.modify_date updTime--对象的更新时间
+	,obj2.create_date creTime --对象的创建时间
+    ,obj_d.value objdescribe  --对象名  
+	,a.id objid  --对象ID  
+	, a.colid  --列ID
+	,a.name  --列名称
+	,b.name typename  --列的类型
+	,a.prec  --该列的原长度  推荐使用
+	,a.[length]    --该列的长度
+	,a.scale  --如果这列是数值列，那么这就是列的小数位数，否则就是0
+	,a.isnullable  --该列是否可以为null
+	,a.iscomputed --表示是否已计算该列的标志  0 = 未计算。  1 = 已计算。
+	,com.[definition] computed_text -- 计算列的表达式
+	,a.isoutparam    --表示该过程参数是否是输出参数  0 = 假。  1 = 真。
+	,d.value describe -- 字段的描述
+	,de.text defaultvalue  -- 字段的默认值
+    ,de.id defaultid  -- 这个ID可与sysobjects的ID关联起来查询约束的名字
+	,COLUMNPROPERTY(a.id,a.name,'IsIdentity') isidentity  --指示是否是标识列（自增长列）
+    ,case when obj.xtype='U' and COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then IDENT_SEED(obj.name) else null end identity_seed  -- 种子
+    ,case when obj.xtype='U' and COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then IDENT_INCR(obj.name) else null end AS identity_increase  -- 增量
+	, ISNULL( ind.indid,0) isprimarykey --指示是否是主键列
+	,case ISNULL(un.约束列名,'') when '' then 0 else 1 end isunion  --指示是否有唯一索引
+	,case ISNULL(chk.object_id,'') when '' then 0 else 1 end ischeck  --指示是否有check索引
+    ,chk.[definition] check_text
+	,t.parentTabID   --主表ID
+	,object_name(t.parentTabID) parentTabName  --主表名
+	,t.parColId,t.parColName
+from syscolumns a left join systypes b on a.xusertype=b.xusertype
+	left join sys.extended_properties d on d.major_id=a.id and d.minor_id =a.colid 
+	left join syscomments de on de.id=a.cdefault  
+	left join sysindexkeys ind on ind.id=a.id and a.colid=ind.colid and ind.indid=1 
+	left join (
+		select
+		a.name as 约束名,
+		b.parent_object_id as sonTabID,
+		c.name as 子列,
+		c.column_id sonColID,
+		b.referenced_object_id as parentTabID,
+		d.name as parColName
+		,d.column_id parColId
+		from sys.foreign_keys A
+			inner join sys.foreign_key_columns B on A.object_id=b.constraint_object_id
+			inner join sys.columns C on B.parent_object_id=C.object_id and B.parent_column_id=C.column_id 
+			inner join sys.columns D on B.referenced_object_id=d.object_id and B.referenced_column_id=D.column_id 	
+    ) as t on t.sonColID=a.colid and t.sonTabID=a.id  -- 外键
+    left join sysobjects obj on obj.id=a.id
+    left join sys.extended_properties obj_d on obj_d.major_id=a.id and obj_d.minor_id =0 
+    left join sys.check_constraints chk on chk.parent_object_id = obj.id AND chk.parent_column_id = a.colid  -- Check约束
+    left join 
+    (
+		SELECT
+		  tab.object_id AS [表ID],
+		  tab.name AS [表名],
+		  idx.name AS [约束名称],
+		  col.column_id AS [约束列ID],
+		  col.name AS [约束列名]
+		FROM  sys.index_columns idxCol
+			left join sys.indexes idx ON (idx.object_id = idxCol.object_id  AND idx.index_id = idxCol.index_id and idx.is_unique_constraint = 1)
+			left JOIN sys.tables tab ON (idx.object_id = tab.object_id)
+			left JOIN sys.columns col ON (idx.object_id = col.object_id AND idxCol.column_id = col.column_id)
+    ) un on un.表ID=a.id and un.约束列ID=a.colid
+    left join sys.computed_columns com on com.object_id=a.id and com.column_id=a.colid--计算列的表达式
+    left join sys.objects obj2 on obj2.object_id=obj.id --创建 修改时间
+where a.id in (select id from sysobjects where xtype in ('U','V'))
+order by obj.name,obj.xtype,obj.id,a.colid

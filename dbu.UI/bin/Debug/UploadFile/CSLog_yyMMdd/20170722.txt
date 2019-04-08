@@ -1,0 +1,20 @@
+
+-------D:\E\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\-------
+
+20170722 22:00:52  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1952,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).
+20170722 22:01:28  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1952,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).
+20170722 22:12:36  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs CreateModels(String dicPath,String spaceName,Dictionary`2 fss,String serverName) (161,21)]未能找到路径“D:\E\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\Content\2017_07_22\test.Model\B_Area.cs”的一部分。 ().
+20170722 22:13:10  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1952,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).
+20170722 22:32:55  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1958,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).
+20170722 22:34:56  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1958,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).

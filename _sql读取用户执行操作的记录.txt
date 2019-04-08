@@ -1,0 +1,7 @@
+
+SELECT [Transaction ID],[Transaction Name],[Begin Time],[Server UID],SPID
+FROM sys.fn_dblog(NULL,null)
+WHERE [Transaction Name] is not null
+go
+
+

@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body ,th,td{ font-size: 14px;}
+	table,th,td{border-color: rgb(208,215,229);}
+	table { border-collapse: collapse; width: 100%;border-width: 0;}
+        .styledb { font-size: 14px; }
+	html table tr:hover{ background-color:#efefef;}
+	html table tr:active{ background-color:#ccc;}
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto; width: 94%;">
+     	<div class="styledb"></div>
+
+	<ad:foreach collection="{$tabs.Keys}" var="title" index="i">
+	<div class="styletab">表名：{$title}</div>
+	<div align="left">{$My_GetValue(tabs[title][0].ObjDescribe)}</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			<ad:foreach collection="{$tabs[title]}" var="field" index="i_field">
+			<tr{$iif(islt(i_field, 1), " bgcolor='#F0F0F0'", "")}>
+				<td title="序号">{$field.ColID}</td>
+				<td title="列名">{$field.ColName}</td>
+				<td title="数据类型">{$field.ColTypeName}</td>
+				<td title="长度">{$field.OldLength}</td>
+				<td title="小数位">{$field.Scale}</td>
+				<td title="标识">{$iif(field.IsIdentity,"是","")}</td>
+				<td title="主键">{$iif(field.IsPrimaryKey,"是","")}</td>
+				<td title="外键">{$My_GetValue(field.PrientTableName)}</td>
+				<td title="允许空">{$iif(field.IsNull,"是","否")}</td>
+				<td title="默认值">{$My_GetValue(field.DefaultValue)}</td>
+				<td title="说明">{$My_GetValue(field.Describe)}</td>
+			</tr>
+			</ad:foreach>
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	</ad:foreach>   
+    </div>
+
+
+</body>
+</html>

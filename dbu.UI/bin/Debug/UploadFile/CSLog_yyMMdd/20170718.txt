@@ -1,0 +1,6 @@
+
+-------D:\E\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\-------
+
+20170718 22:22:29  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1928,37)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> BU_AccountBook -> AddTime] 默认值错误，以作为""处理  defauleValue=(getdate())).

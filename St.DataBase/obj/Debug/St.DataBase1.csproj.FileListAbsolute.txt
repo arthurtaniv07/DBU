@@ -1,0 +1,5 @@
+C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\St.DataBase\bin\Debug\St.DataBase.dll
+C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\St.DataBase\bin\Debug\St.DataBase.pdb
+C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\St.DataBase\obj\Debug\St.DataBase1.csprojResolveAssemblyReference.cache
+C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\St.DataBase\obj\Debug\St.DataBase.dll
+C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\St.DataBase\obj\Debug\St.DataBase.pdb

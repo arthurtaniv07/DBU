@@ -1,0 +1,12 @@
+
+--为表添加描述信息
+ EXECUTE sp_addextendedproperty N'MS_Description', '人员信息表', N'user', N'dbo', N'table', N'表', NULL, NULL
+--为字段a1添加描述信息
+ EXECUTE sp_addextendedproperty N'MS_Description', '姓名', N'user', N'dbo', N'table', N'表', N'column', N'a1'
+--为字段a2添加描述信息
+ EXECUTE sp_addextendedproperty N'MS_Description', '性别', N'user', N'dbo', N'table', N'表', N'column', N'a2'
+--更新表中列a1的描述属性：
+ EXEC sp_updateextendedproperty 'MS_Description','字段1','user',dbo,'table','表','column',a1
+
+--删除表中列a1的描述属性：
+ EXEC sp_dropextendedproperty 'MS_Description','user',dbo,'table','表','column',a1

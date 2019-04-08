@@ -1,0 +1,2 @@
+
+TMS_AttendanceImport	Late10_HNumber  无法转换类型

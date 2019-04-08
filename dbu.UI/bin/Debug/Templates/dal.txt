@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using System.Data;
+using System.Data.SqlClient;
+
+using {$modelNamespace};
+using St.DataBase;
+
+namespace {dalNameSpace}
+{
+	public class {$tabName_DAL}
+	{
+		private static DbHelper db=new DbHelper();
+		private const string tabName = "{$tabName}";
+
+		#region CommandText
+		private const string selectAllText = "select <ad:foreach collection="{$fields}" var="field" index="i">{iis(isgt(i,0),",","")}{$field.ColName}</as:foreach> from {$tabName}";
+		private const string selectByKeyText = "select <ad:foreach collection="{$fields}" var="field" index="i">{iis(isgt(i,0),",","")}{$field.ColName}</as:foreach> from {$tabName} where {$primaryKey.ColName}=@{$primaryKey.ColName}";
+		private const string selectByWhereText = "select <ad:foreach collection="{$fields}" var="field" index="i">{iis(isgt(i,0),",","")}{$field.ColName}</as:foreach> from {$tabName} {0}";
+		
+		private const string insertText = "insert into stu(id, name, sex, age, clasid, address, birthday) values(@Id, @Name, @Sex, @Age, @Clasid, @Address, @Birthday);select @@IDENTITY";
+		private const string updateByKeyText = "update  stu set Id=@Id, Name=@Name, Sex=@Sex, Age=@Age, Clasid=@Clasid, Address=@Address, Birthday=@Birthday where id=@Id";
+
+		private const string deleteByKeyText = "delete from stu where id=@id";
+		private const string deleteByKeyInText = "delete from stu where id in ({0})";
+		#endregion
+	}
+}

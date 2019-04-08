@@ -1,0 +1,6 @@
+
+-------D:\E\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\-------
+
+20170709 17:54:09  --  user.UserName(user.LoginName,user.UserID)
+[错误][D:\E\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs GetDefaultValue(String defaultValue,String dbtype,String serverName,String tabName,String fieldName) (1952,29)]指定的参数已超出有效值的范围。
+参数名: i ([(local) -> U_UserLog -> UserID] 默认值错误，以作为0处理  defauleValue=('')).

@@ -1,0 +1,1838 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body ,th,td{ font-size: 14px;}
+	table,th,td{border-color: rgb(208,215,229);}
+	table { border-collapse: collapse; width: 100%;border-width: 0;}
+        .styledb { font-size: 14px; }
+	html table tr:hover{ background-color:#efefef;}
+	html table tr:active{ background-color:#ccc;}
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto; width: 94%;">
+     	<div class="styledb"></div>
+
+	
+	<div class="styletab">表名：BU_AcBook</div>
+	<div align="left">账簿</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本所属的用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">Name</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">账本名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">SetMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本总收入</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">PayMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本总支出</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">YuMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本余额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">Money_YuZhi</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本预支金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">YuMoney_YuZhi</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本剩余预支金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_AcDebt</div>
+	<div align="left"></div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">Name</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">关联的债务人名</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">Money_Yu</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">18</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明">该债务人钱用户的未还金额</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_AcDebtInfo</div>
+	<div align="left"></div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">DebtUserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的债务人ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">SetMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">收入的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">PayMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">支出的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">Money_Old</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">利息</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">Money_Added</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">Money_Result</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">原金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_AcIO</div>
+	<div align="left">流水账目表</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">AcBookID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账本ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">AcBookName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">账本名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">OpWay</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((-1))</td>
+				<td title="说明">操作类型 （-1支出 1收入 2转账 3借贷）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">PayType</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((-1))</td>
+				<td title="说明">支付类型 0未发生对外交易(如取款)  1收入  -1支出 </td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">PayType2</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">支付账目  如生活缴费(水费 电费 网费)  充值(流量 话费)</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">PayType3</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">支付类型 如水费 电费 工资</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">MediID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">媒介ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">10</td>
+				<td title="列名">MediName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">媒介名称，如支付宝 微信 </td>
+			</tr>
+			
+			<tr>
+				<td title="序号">11</td>
+				<td title="列名">PayWayID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">支付的账户</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">12</td>
+				<td title="列名">PayWayName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">支付的账户名称  如花呗 现金 余额宝</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">13</td>
+				<td title="列名">YouDebtID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">债务人ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">14</td>
+				<td title="列名">YouComName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">对方所属单位名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">15</td>
+				<td title="列名">YouName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">对方名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">16</td>
+				<td title="列名">YouWayID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">对方账户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">17</td>
+				<td title="列名">YouWayName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">对方账户名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">18</td>
+				<td title="列名">YouWayIDNumber</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">对方账户号码  比如银行卡号</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">19</td>
+				<td title="列名">PayDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">交易时间</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">20</td>
+				<td title="列名">PayDateStr</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">交易时间 不确定的时间段（如2017春节期间）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">21</td>
+				<td title="列名">Money_Old</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">应付款</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">22</td>
+				<td title="列名">Money_Added</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">增加的金额、优惠的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">23</td>
+				<td title="列名">Money_Percent</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">(单位:%)  增加的百分比、减少的百分比</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">24</td>
+				<td title="列名">SetMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">收入金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">25</td>
+				<td title="列名">PayMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">支出金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">26</td>
+				<td title="列名">Money_Result</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">最终交易的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">27</td>
+				<td title="列名">Remark</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">500</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">用户备注</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">28</td>
+				<td title="列名">YuMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">未还的金额（为付则是需要还给对方的金额）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">29</td>
+				<td title="列名">IsBreakToLinkUser</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">是否需要还（0不需要  1需要）（针对制定的用户）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">30</td>
+				<td title="列名">IsBreakToPayWay</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">是否需要还（0不需要  1需要）(针对支付方式)</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">31</td>
+				<td title="列名">IsBaoXiao</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((-1))</td>
+				<td title="说明">是否已经报销（只有支出才有值  -1不报销   0待报销 1已经报销 2未报销）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">32</td>
+				<td title="列名">LinkUserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">该记录制定的用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">33</td>
+				<td title="列名">LinkUserName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">该记录制定的用户名称</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">34</td>
+				<td title="列名">LinkTableID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">35</td>
+				<td title="列名">ApplyTableName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">申请表表名</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">36</td>
+				<td title="列名">ApplyTableID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">申请表ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">37</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_BankAccount</div>
+	<div align="left"></div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">BankType</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((1))</td>
+				<td title="说明">银行类型 （ 0债务人  1现金 2网络账户  3储蓄卡  4信用卡）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">Name</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">IDNumber</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">账号</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">MoneyType</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">币种类型</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">YuMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">14</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">账户余额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">IsBreak</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">余额是否允许小于0（是否信用）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加日期</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_PayType2</div>
+	<div align="left">常用支付方式</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">OpWay</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((-1))</td>
+				<td title="说明">操作类型 （-1支出 1收入 2转账 3借贷）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">PayType</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">收支类型 -1:支 1收</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">Name</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">支付账目  如生活缴费(水费 电费 网费)  充值(流量 话费)</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">State</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((1))</td>
+				<td title="说明">状态</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">Sort</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">排序 越大越靠后</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">IsBreak</td>
+				<td title="数据类型">bit</td>
+				<td title="长度">1</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">是否需要还给该账号（0不需要  1需要）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_PayType3</div>
+	<div align="left"></div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">PID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">父级ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">Name</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">支付账目  如生活缴费(水费 电费 网费)  充值(流量 话费)</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">State</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((1))</td>
+				<td title="说明">状态</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">Sort</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">排序 越大越靠后</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">IsBreak</td>
+				<td title="数据类型">bit</td>
+				<td title="长度">1</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">是否需要还给该账号（0不需要  1需要）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_UserInfo</div>
+	<div align="left">用户信息表</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserNO</td>
+				<td title="数据类型">varchar</td>
+				<td title="长度">32</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明">用户编号</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">UserName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值">('')</td>
+				<td title="说明">用户中文名</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">LoginName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">登录名</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">Pwd</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">500</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">密码 加密后</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">ToKen</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">登录令牌</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">Gender</td>
+				<td title="数据类型">varchar</td>
+				<td title="长度">2</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">性别</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">BirthDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明">出生日期</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">Mobile</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">联系电话（手机）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">10</td>
+				<td title="列名">Telephone</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">联系电话（座机）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">11</td>
+				<td title="列名">Fax</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">32</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值">('')</td>
+				<td title="说明">传真</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">12</td>
+				<td title="列名">QQ</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">QQ号码</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">13</td>
+				<td title="列名">Email</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">电子邮件</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">14</td>
+				<td title="列名">CreateTime</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">创建时间</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">15</td>
+				<td title="列名">UpdateTime</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">16</td>
+				<td title="列名">ProvinceCode</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">6</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">17</td>
+				<td title="列名">Province</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">省份</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">18</td>
+				<td title="列名">CityCode</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">6</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">19</td>
+				<td title="列名">City</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">城市</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	
+	<div class="styletab">表名：BU_UserLogin</div>
+	<div align="left">登录账号</div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">LoginSource</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明">注册来源 （微信、QQ、新浪微博）</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">UID</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">100</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明">第三方唯一索引</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">UserNO</td>
+				<td title="数据类型">varchar</td>
+				<td title="长度">32</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明">对应系统的用户编号</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">AddTime</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">注册时间</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">State</td>
+				<td title="数据类型">int</td>
+				<td title="长度">10</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">状态 0未激活 1正常</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">10</td>
+				<td title="列名">OpUserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">操作用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">11</td>
+				<td title="列名">OpUserName</td>
+				<td title="数据类型">nvarchar</td>
+				<td title="长度">50</td>
+				<td title="小数位">[null]</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">('')</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">12</td>
+				<td title="列名">OpTime</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">是</td>
+				<td title="默认值"></td>
+				<td title="说明">操作时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div>
+	   
+    </div>
+
+
+</body>
+</html>

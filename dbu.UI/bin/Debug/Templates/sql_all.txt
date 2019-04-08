@@ -1,0 +1,39 @@
+USE [{$dbName}]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+<ad:foreach collection="{$tabs.Keys}" var="title" index="i">
+if(exists(select * from sysobjects where name='{$title}'))
+begin
+	drop table [{$title}]
+end
+go
+
+/** {$My_GetValue(tabs[title][0].ObjDescribe)} **/
+CREATE TABLE [dbo].[{$title}](<ad:foreach collection="{$tabs[title]}" var="field" index="i_field">
+	{$DB_GetFieldStr(field)},</ad:foreach>
+	{$DB_GetPrimaryKeyFields(tabs[title])}
+) 
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+<ad:foreach collection="{$tabs[title]}" var="field" index="i_field">{$DB_GetFOREIGNKEYSQL(title,field,tabs)}</ad:foreach>
+
+{$DB_GetCHECKSQL(title)}
+
+<ad:foreach collection="{$tabs[title]}" var="field" index="i_field">{$DB_GetDefaultSQL(title,field)}</ad:foreach>
+
+{$DB_GetObjDescribeSQL(title,tabs[title][0])}
+<ad:foreach collection="{$tabs[title]}" var="field" index="i_field">{$DB_GetDescribeSQL(title,field)}</ad:foreach>
+
+
+</ad:foreach>

@@ -1,0 +1,46 @@
+select 
+	obj.xtype objtype
+	,obj.name  objname
+    ,obj_d.value objdescribe
+	,a.id objid
+	, a.colid
+	,a.name
+	,b.name typename
+	,a.prec
+	,a.[length] 
+	,a.scale
+	,a.isnullable
+	,a.iscomputed
+	,a.isoutparam  
+	,d.value describe
+	,de.text defaultvalue 
+	,COLUMNPROPERTY(a.id,a.name,'IsIdentity') isidentity 
+	, ISNULL( ind.indid,0) isprimarykey
+	,case ISNULL(uniq.TABLE_NAME,'') when '' then 0 else 1 end isunique 
+	,t.parentTabID 
+	,t.parentTabName 
+	--,ind.*
+    ,case when obj.xtype='U' and COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then IDENT_SEED(obj.name) else null end IDENTITY_SEED
+    ,case when obj.xtype='U' and COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then IDENT_INCR(obj.name) else null end AS IDENTITY_INCREASE
+from syscolumns a left join systypes b on a.xusertype=b.xusertype
+	left join sys.extended_properties d on d.major_id=a.id and d.minor_id =a.colid 
+	left join syscomments de on de.id=a.cdefault  
+	left join sysindexkeys ind on ind.id=a.id and a.colid=ind.colid and ind.indid=1 
+	left join (
+		select zhu.id parentTabID,zhu.name parentTabName,k.referenced_column_id parentColName--主表
+			,zi.id sonTabID,zi.name sonTabName,k.parent_column_id sonColID--子表
+		from sys.foreign_key_columns k
+			left join sysobjects zhu on zhu.id=k.referenced_object_id
+			left join sysobjects zi on zi.id=k.parent_object_id
+		where (k.parent_column_id<>k.referenced_column_id or k.parent_object_id<>k.referenced_object_id)
+		--select distinct p.referenced_object_id parentTabID,p.referenced_column_id 列ID,p.parent_column_id sonColID,p.parent_object_id sonTabID,objptab.name parentTabName
+		--from sys.foreign_key_columns p
+		--	left join sysobjects objptab on objptab.id=p.referenced_object_id			
+    ) as t on t.sonColID=a.colid and t.sonTabID=a.id--外键
+    left join sysobjects obj on obj.id=a.id
+   left join information_schema.table_constraints uniq on uniq.CONSTRAINT_TYPE='UNIQUE' and uniq.TABLE_NAME=obj.name
+    left join sys.extended_properties obj_d on obj_d.major_id=a.id and obj_d.minor_id =0 
+--where a.id in (select id from sysobjects where xtype in ('U'))
+where a.id=OBJECT_ID('BU_HelpType')
+--where " + (isAllTab ? "a.id in (select id from sysobjects where xtype in (" + type + "))" : "a.id=OBJECT_ID('" + tabName + "')") + " 
+order by obj.name,obj.xtype,obj.id,a.colid

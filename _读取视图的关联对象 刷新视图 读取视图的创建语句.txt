@@ -1,0 +1,18 @@
+
+--查询对象的创建修改时间
+select modify_date as 修改时间,create_date 创建时间,name 名称,max_column_id_used 字段个数,* 
+from sys.objects
+where name='对象名'
+order by modify_date
+
+
+go
+
+--查询视图 存储过程 触发器 的创建语句
+sp_helptext 't1'
+go
+
+
+--查询对象的关联对象
+sp_depends 't1'
+go

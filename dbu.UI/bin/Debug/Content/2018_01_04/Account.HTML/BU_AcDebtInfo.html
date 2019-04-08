@@ -1,0 +1,172 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body,th,td{ font-size: 14px;}
+	table,th,td{border-color: rgb(208,215,229);}
+	table { border-collapse: collapse; width: 100%;border-width: 0;}
+        .styledb { font-size: 14px; }
+	html table tr:hover{ background-color:#efefef;}
+	html table tr:active{ background-color:#ccc;}
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto; width: 94%;">
+     	<div class="styledb"></div>
+
+	<div class="styletab">表名：BU_AcDebtInfo</div>
+	<div align="left"></div>
+	<div>
+		<table border="0" cellpadding="5" cellspacing="0" width="90%"><tbody><tr><td bgcolor="#FBFBFB">
+
+			<table cellspacing="0" cellpadding="5" border="1" width="100%" bordercolorlight="#D7D7E5" bordercolordark="#D3D8E0"><tbody>
+			<tr bgcolor="#F0F0F0">
+				<td>序号</td>
+				<td>列名</td>
+				<td>数据类型</td>
+				<td>长度</td>
+				<td>小数位</td>
+				<td>标识</td>
+				<td>主键</td>
+				<td>外键</td>
+				<td>允许空</td>
+				<td>默认值</td>
+				<td style='width: 35%;'>说明</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">1</td>
+				<td title="列名">ID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识">是</td>
+				<td title="主键">是</td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值"></td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">2</td>
+				<td title="列名">UserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的用户ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">3</td>
+				<td title="列名">DebtUserID</td>
+				<td title="数据类型">bigint</td>
+				<td title="长度">19</td>
+				<td title="小数位">0</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">关联的债务人ID</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">4</td>
+				<td title="列名">SetMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">收入的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">5</td>
+				<td title="列名">PayMoney</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">支出的金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">6</td>
+				<td title="列名">Money_Old</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">利息</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">7</td>
+				<td title="列名">Money_Added</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明"></td>
+			</tr>
+			
+			<tr>
+				<td title="序号">8</td>
+				<td title="列名">Money_Result</td>
+				<td title="数据类型">decimal</td>
+				<td title="长度">10</td>
+				<td title="小数位">2</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">((0))</td>
+				<td title="说明">原金额</td>
+			</tr>
+			
+			<tr>
+				<td title="序号">9</td>
+				<td title="列名">AddDate</td>
+				<td title="数据类型">datetime</td>
+				<td title="长度">23</td>
+				<td title="小数位">3</td>
+				<td title="标识"></td>
+				<td title="主键"></td>
+				<td title="外键"></td>
+				<td title="允许空">否</td>
+				<td title="默认值">(getdate())</td>
+				<td title="说明">添加时间</td>
+			</tr>
+			
+			</tbody></table>
+
+		</td></tr></tbody></table> 
+
+	</div> 
+    </div>
+
+
+</body>
+</html>

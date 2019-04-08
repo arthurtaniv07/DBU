@@ -1,0 +1,155 @@
+--------------------可行 0:10 2016/8/9---------------------
+select c.name as ColumnName, c.colorder as ColumnOrder, c.xtype as DataType, typ.name as  DataTypeName, c.Length, c.isnullable from dbo.syscolumns c inner join dbo.sysobjects t 
+on c.id = t.id 
+inner join dbo.systypes typ on typ.xtype = c.xtype
+where OBJECTPROPERTY(t.id, N'IsUserTable') = 1 
+and t.name='R_BigMenu' order by c.colorder;
+
+
+
+-------------------------------------------------
+
+（查询表的为以约束）
+SELECT
+  tab.name AS [表名],
+  idx.name AS [约束名称],
+  col.name AS [约束列名]
+FROM
+  sys.indexes idx
+    JOIN sys.index_columns idxCol 
+      ON (idx.object_id = idxCol.object_id 
+          AND idx.index_id = idxCol.index_id 
+          AND idx.is_unique_constraint = 1)
+    JOIN sys.tables tab
+      ON (idx.object_id = tab.object_id)
+    JOIN sys.columns col
+      ON (idx.object_id = col.object_id
+          AND idxCol.column_id = col.column_id)
+WHERE
+  tab.name = 'AA'
+
+
+/*
+columns  --列的信息
+1,object_id--这个列是比较重要的，它是返回当前列所属表的ID。利用它，我们就可以查询指定表的所有列信息，比如下面的sql语句是查询表table1的所有列信息。
+2,name--该列的列名。
+3,column_id--该列在数据库中的ID，注意，数据库中任何对象的ID都是唯一的。
+4,system_type_id--该列的类型的ID，和下面max_length,precision,scale三列一起可以来举个示例。
+5,max_length--该列的最大长度，单字节字符长度
+6,precisionp--如果这列是数值列，那么这是该列的精度，否则就是0
+7,scale--如果这列是数值列，那么这就是列的小数位数，否则就是0
+8,is_nullable--该列是否可以为null
+9,is_identity--该列是否是标识列
+10,is_computed--该列是否是计算列
+
+types-- 字段类型的信息
+1,name--字段的名称
+2,user_type_id--字段的ID
+
+extended_properties--字段的描述
+1,major_id--表的ID  与columns表的object_id字段对应
+2,minor_id --列的ID  与columns表的column_id字段对应
+3,value -- 字段的描述
+
+*/
+select a.name,b.name,a.max_length,a.precision,a.scale ,a.is_nullable,a.is_identity,a.is_computed,d.value
+from sys.columns a left join sys.types b on a.user_type_id=b.user_type_id 
+	left join sys.extended_properties d on d.major_id=a.object_id and d.minor_id =a.column_id
+	--left join syscomments de on de.id=a.
+where a.object_id=object_id('AccountLog')
+
+
+
+select 
+	obj.xtype objtype  -- 对象类型  U:表信息  V：视图  PK：主键   D：默认约束  P：存储过程  TR：触发器  F：外键
+	,obj_d.value objdescribe  -- 表的描述
+	,obj.name  objname   --对象名  
+	,a.id objid   --对象ID  
+	,a.colid   --列ID
+	,a.name   --列名称
+	,b.name typename   --列的类型
+	,case when b.xtype=243 then 1 else 0 end isusertabletype   --是否是用户自定义表类型
+	,a.prec--该列的原长度  推荐使用
+	,a.[length] --该列的长度
+	,a.scale --如果这列是数值列，那么这就是列的小数位数，否则就是0
+	,a.isnullable--该列是否可以为null
+	,a.iscomputed--表示是否已计算该列的标志  0 = 未计算。  1 = 已计算。
+	,a.isoutparam    --表示该过程参数是否是输出参数  0 = 假。  1 = 真。
+	,d.value describe -- 字段的描述
+	,de.text defaultvalue  -- 字段的默认值
+	,COLUMNPROPERTY(a.id,a.name,'IsIdentity') isidentity  --指示是否是标识列（自增长列）
+	, ISNULL( ind.indid,0) isprimarykey--指示是否是主键列
+	,case ISNULL(uniq.TABLE_NAME,'') when '' then 0 else 1 end isunique --指示是否有唯一索引
+	,t.parentTabID		--主表ID
+	,t.parentTabName --主表名
+from syscolumns a left join systypes b on a.xusertype=b.xusertype--类型
+	left join sys.extended_properties d on d.major_id=a.id and d.minor_id =a.colid  --列描述
+	left join syscomments de on de.id=a.cdefault    --默认值
+	left join sysindexkeys ind on ind.id=a.id and a.colid=ind.colid and ind.keyno=1 -- 主键  【keyno（该列在索引列中的位置）】
+	left join (
+		--tp20160813 新增distinct 关键字 去重
+		select distinct p.referenced_object_id parentTabID,p.referenced_column_id 列ID,p.parent_column_id sonColID,p.parent_object_id sonTabID,objptab.name parentTabName
+		from sys.foreign_key_columns p
+			left join sysobjects objptab on objptab.id=p.referenced_object_id			
+    ) as t on t.sonColID=a.colid and t.sonTabID=a.id--主表名称
+    left join sysobjects obj on obj.id=a.id  --查询的对象
+   left join information_schema.table_constraints uniq on uniq.CONSTRAINT_TYPE='UNIQUE' and uniq.TABLE_NAME=obj.name  --唯一索引
+	left join sys.extended_properties obj_d on obj_d.major_id=a.id and obj_d.minor_id =0  --对象的描述
+ where obj.xtype not in ('S','IT') 
+ order by obj.xtype,obj.id,a.colid
+
+
+
+
+--获取当前数据库下面的所有表U 视图V 信息
+--select id,name,xtype from sysobjects where (xtype='U' or xtype='V')   --U:表信息  V：识图  PK：主键   D：默认约束  P：存储过程  tr：触发器  F：外键
+
+
+
+
+--获取表的主表信息
+select fk.name 名称 
+     	,ftable.id 子表ID, ftable.name 子表名, cn.name 外键名,cn.colid 外键列_ID ,rtable.id 主表ID, rtable.name 主表名 
+     	 from sysforeignkeys
+     	join sysobjects fk 
+     	  on sysforeignkeys.constid = fk.id
+     	join sysobjects ftable
+     	  on sysforeignkeys.fkeyid = ftable.id 
+     	join sysobjects rtable
+     	  on sysforeignkeys.rkeyid = rtable.id 
+     	join syscolumns cn 
+     	  on sysforeignkeys.fkeyid = cn.id and sysforeignkeys.fkey = cn.colid
+     		and ftable.id=OBJECT_ID( 'AccountLog')
+
+select * from sys.objects where parent_object_id=object_id('AccountLog')
+
+--获取数据库名称
+--select name from sysdatabases
+
+
+
+--获取添加后的ID值
+/*
+insert into UserInfo(name,test) values ('11','10000000000000')
+SELECT @@IDENTITY AS id
+*/
+
+/*
+例如，若要查询上例中ID等于1的行，
+以下两条查询语句是等价的
+SELECT * FROM T_test WHERE IDENTITYCOL=1
+SELECT * FROM T_test WHERE ID=1
+
+取标识列的种子值
+可使用函数IDENT_SEED,用法：
+SELECT IDENT_SEED ('表名')
+
+获取标识列的递增量
+可使用函数IDENT_INCR ,用法：
+SELECT IDENT_INCR('表名')
+
+获取指定表中最后生成的标识值
+可使用函数IDENT_CURRENT，用法:
+SELECT IDENT_CURRENT('表名') 
+*/
+

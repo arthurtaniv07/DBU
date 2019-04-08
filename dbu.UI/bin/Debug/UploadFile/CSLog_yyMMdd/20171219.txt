@@ -1,0 +1,7 @@
+
+-------C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\-------
+
+20171219 22:51:31  --  user.UserName(user.LoginName,user.UserID)
+[错误][C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs CreateBLL(String dicPath,String spaceName,String modelNameSpace,String dalNameSpace,Dictionary`2 fss) (1612,21)]未能找到路径“C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\Content\2017_12_19\Account.BLL\BU_AcBookBLL.cs”的一部分。 ().
+20171219 22:57:22  --  user.UserName(user.LoginName,user.UserID)
+[错误][C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\dbu.Build\DBUFileHelper.cs CreateBLL(String dicPath,String spaceName,String modelNameSpace,String dalNameSpace,Dictionary`2 fss) (1612,21)]未能找到路径“C:\Users\Ly\Desktop\Arthur\我的项目\MyProject\DBUHelper\dbu.UI\bin\Debug\Content\2017_12_19\Account.BLL\BU_AcBookBLL.cs”的一部分。 ().

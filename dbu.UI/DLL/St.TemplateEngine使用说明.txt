@@ -1,0 +1,125 @@
+﻿StringBuilder inputsb = new StringBuilder();
+
+            inputsb.Append("{$isgt(1, 2)}<br />\r\n");
+            inputsb.Append("{$1 lt 2}<br />\r\n");
+            inputsb.Append("{$1 is 2}<br />\r\n");
+            inputsb.Append("<ad:set name=\"x\" value=\"你好吗！\" />\r\n");
+            inputsb.Append("{$x.length}<br />\r\n");
+            inputsb.Append("<ad:template name=\"bold\"><b>{$innerText}</b></ad:template>\r\n");
+            inputsb.Append("<ad:template name=\"italic\"><i>{$innerText}</i></ad:template>\r\n");
+            inputsb.Append("<ad:bold><ad:italic>测试文字</ad:italic></ad:bold><br />\r\n");
+            inputsb.Append("{$ St[0]}\r\n");
+            inputsb.Append("<ad:_Public_Header />\r\n");
+
+            string input = inputsb.ToString();
+            string output = "";
+
+            string sr = StFile.ReadAllText(Environment.CurrentDirectory + "\\Templates\\a.txt");
+            Template _Public_Header = Template.FromString("_Public_Header", sr);
+
+            //Template _Public_Header = Template.FromFile("_Public_Header", Environment.CurrentDirectory + "\\Templates\\a.txt");
+            //Template _Public_Footer = Template.FromFile("_Public_Footer", Environment.CurrentDirectory + "\\Templates\\_Public_Footer.html");
+
+
+
+
+            TemplateManager tm = TemplateManager.FromString(input);
+
+            tm.AddTemplate(_Public_Header);
+            //tm.AddTemplate(_Public_Footer);
+
+            //tm.Functions.Add("RowValue", new TemplateFunction(RowValue));
+            //tm.Functions.Add("ColValue", new TemplateFunction(ColValue));
+            //tm.SetValue("Book", db.Book);
+            tm.SetValue("St", new string[] { "www.vmoom.com", "www.vmoom.net" });
+
+            output = tm.Process();
+
+            // 删除空行
+            output = Regex.Replace(output, @"\n\s+\n", "\n", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            Console.WriteLine(output);
+
+
+            Console.WriteLine("=====================================");
+
+            StringBuilder sb2 = new StringBuilder();
+            sb2.Append(@"<div id=""Book"">
+	<ul class=""t"">
+		<ad:foreach collection=""{$Book.Columns}"" var=""title"" index=""i"">
+		<li class='c{$i}'>{$ColValue(title, i)}</li>
+		</ad:foreach>
+	</ul>
+	<ad:foreach collection=""{$Book.Rows}"" var=""book"" index=""i"">
+	<ul class=""b{$iif(i lt 1, "" b2"", "" b1"")}"">
+		<li class=""c1"">{$book[""编号""]}</li>
+		<li class=""c2"">{$RowValue(book, 1)}</li>
+		<li class=""c3"">{$RowValue(book, 2)}</li>
+		<li class=""c4"">{$RowValue(book, 3)}</li>
+		<li class=""c5"">{$RowValue(book, 4)}</li>
+	</ul>
+	</ad:foreach>
+</div>");
+
+
+            TemplateManager tm2 = TemplateManager.FromString(sb2+"");
+
+            DataTable _Book = new DataTable();
+
+            _Book.Columns.Add("编号", typeof(int));
+            _Book.Columns.Add("书名", typeof(string));
+            _Book.Columns.Add("作者", typeof(string));
+            _Book.Columns.Add("出版日期", typeof(DateTime));
+            _Book.Columns.Add("定价", typeof(decimal));
+
+            _Book.Rows.Add(new object[] { 0, "《王一麻子历险记》", "张灵", DateTime.Parse("2001-01-01"), 11 });
+            _Book.Rows.Add(new object[] { 1, "《王二麻子历险记》", "张一", DateTime.Parse("2002-02-01"), 22 });
+            _Book.Rows.Add(new object[] { 2, "《王三麻子历险记》", "张二", DateTime.Parse("2003-04-01"), 33 });
+            _Book.Rows.Add(new object[] { 3, "《王四麻子历险记》", "张三", DateTime.Parse("2004-05-22"), 44 });
+            _Book.Rows.Add(new object[] { 4, "《王五麻子历险记》", "张四", DateTime.Parse("2005-01-15"), 55 });
+            _Book.Rows.Add(new object[] { 5, "《王六麻子历险记》", "张五", DateTime.Parse("2006-06-01"), 66 });
+            _Book.Rows.Add(new object[] { 6, "《王七麻子历险记》", "张六", DateTime.Parse("2007-01-26"), 77 });
+            _Book.Rows.Add(new object[] { 7, "《王八麻子历险记》", "张其", DateTime.Parse("2008-11-01"), 88 });
+            _Book.Rows.Add(new object[] { 8, "《王九麻子历险记》", "张霸", DateTime.Parse("2009-01-01"), 99 });
+            _Book.Rows.Add(new object[] { 9, "《王十麻子历险记》", "张酒", DateTime.Parse("2010-12-01"), 90 });
+
+            tm2.Functions.Add("RowValue", new TemplateFunction(RowValue));
+            tm2.Functions.Add("ColValue", new TemplateFunction(ColValue));
+            tm2.SetValue("Book", _Book);
+            tm2.SetValue("tonum", 9);
+
+            output = tm2.Process();
+
+            // 删除空行
+            output = Regex.Replace(output, @"\n\s+\n", "\n", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Console.WriteLine(output);
+
+
+
+
+
+
+
+
+			
+        private static  object RowValue(object[] args)
+        {
+            DataRow dr = (DataRow)args[0];
+            int n = (int)args[1];
+
+            if (dr == null) { return ""; }
+            if (n < 0) { n = 0; }
+
+            return dr[n].ToString();
+        }
+
+        private static  object ColValue(object[] args)
+        {
+            DataColumn col = (DataColumn)args[0];
+            int n = (int)args[1];
+
+            if (col == null) { return ""; }
+            if (n < 0) { n = 0; }
+
+            return col.ColumnName;
+        }

@@ -1,0 +1,25 @@
+using System;
+using System.Text;
+
+
+namespace {$modelNamespace}
+{
+	[Serializable]
+	/// <summary>
+	/// {$My_IsNull(fields[0].ObjDescribe)}
+	/// <summary>
+	public class {$tabName_FU}
+	{
+<ad:foreach collection="{$fields}" var="field" index="i_field">
+		/// <summary>
+		/// {$My_IsNull(field.Describe)}
+		/// </summary>
+		public {$GetDBTypeName(field.ColTypeName)} {$FU(field.ColName)}
+		{
+			get{ return {$GetPrivateFieldName(field.ColName)}; }
+			set{ {$GetPrivateFieldName(field.ColName)} = value; }
+		}
+		private {$GetDBTypeName(field.ColTypeName)} {$GetPrivateFieldName(field.ColName)};
+</ad:foreach>
+	}
+}
